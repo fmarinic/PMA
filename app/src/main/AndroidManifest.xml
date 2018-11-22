@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".StudentInfoActivity" />
         <activity android:name=".SummaryActivity" />
-        <activity android:name=".MyRecyclerView"></activity>
+        <activity android:name=".MyRecyclerView" />
+        <activity android:name=".ActivityFragment"></activity>
     </application>
 
 </manifest>
