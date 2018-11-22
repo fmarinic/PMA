@@ -10,9 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Ime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Ime"/>
 
     <TextView
         android:id="@+id/textViewPrezime"
@@ -20,8 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
-        android:text="Prezime"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/textViewIme"
-        tools:layout_editor_absoluteX="63dp" />
+        app:layout_constraintStart_toEndOf="@+id/textViewIme"
+        tools:layout_editor_absoluteX="63dp"
+        tools:text="Prezime"/>
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,8 @@
+package com.example.student.myapplication;
+
 public class Studenti {
-    public String sIme;
-    public String sPrezime;
+    private String sIme;
+    private String sPrezime;
 
     public Studenti(String ime, String prezime)
     {
@@ -8,12 +10,12 @@ public class Studenti {
         this.sPrezime = prezime;
     }
 
-    public String getsIme() {
-        return sIme;
-    }
-
     public String getsPrezime() {
         return sPrezime;
+    }
+
+    public String getsIme() {
+        return sIme;
     }
 }
 

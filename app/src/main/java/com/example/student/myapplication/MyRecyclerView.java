@@ -6,18 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MyRecyclerView extends AppCompatActivity {
-
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
-    ArrayList<Object> lStudenti = new ArrayList<Object>();
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +18,24 @@ public class MyRecyclerView extends AppCompatActivity {
 
         RecyclerView myrecycleview = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        //mAdapter = new MyRecycleAdapter();
-        mRecyclerView.setAdapter(mAdapter);
+        List<Object> lStudenti = generateList();
+        initializeRecycleView(myrecycleview, lStudenti);
+    }
 
+    List<Object> generateList()
+    {
+        List<Object> list = new ArrayList<>();
+        list.add("Studneti");
+        list.add(new Studenti("Ivan", "Ivić"));
+        list.add(new Studenti("Luka", "Lukić"));
+        list.add(new Studenti("Luka", "Modrić"));
+        list.add(new Studenti("Ivan", "Horvat"));
+
+        return list;
+    }
+    void initializeRecycleView(RecyclerView recyclerView, List<Object> studentList){
+
+        recyclerView.setAdapter(new MyRecycleAdapter(studentList));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)); //postavili layoutmanager
     }
 }
